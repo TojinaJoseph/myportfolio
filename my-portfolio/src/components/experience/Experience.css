@@ -1,0 +1,24 @@
+
+ .experience{
+    margin-top: 40px;
+ }
+ .experience{
+  background: linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%);
+  background-color: #000;
+  clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 30% 98%, 0px 100%);
+}
+.experience h1{
+    font-size: 52px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    color: rgb(242, 243, 244);
+}
+.experience h3{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(177, 178, 179);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

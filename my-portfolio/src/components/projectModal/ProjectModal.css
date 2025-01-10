@@ -1,0 +1,34 @@
+.projectModal img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0p
+}
+.projectModal .tools{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.tools div{
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(133, 76, 230);
+    background-color: rgba(133, 76, 230, 0.082);
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+.projectModal h5{
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(242, 243, 244);
+    margin: 8px 6px 0px;
+}
+.projectModal p{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(242, 243, 244);
+    margin: 8px 6px;
+}

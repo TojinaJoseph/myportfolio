@@ -1,0 +1,76 @@
+.skills{
+    padding: 80px;
+}
+.skills h1{
+    font-size: 52px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    color: rgb(242, 243, 244);
+    margin-bottom: 30px;
+}
+.skills h3{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(177, 178, 179);
+    margin-bottom: 40px;
+}
+.skills-content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 50px;
+    justify-content: center;
+}
+.frontend:hover,.backend:hover,.other:hover{
+   
+     transform: rotateX(20deg) rotateY(20deg);
+}
+.front-content,.back-content,.other-content{
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(17, 25, 40, 0.83);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+    border-radius: 16px;
+    padding: 18px 36px;
+}
+.front-content h4,.back-content h4,.other-content h4{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(177, 178, 179);
+}
+.front-main,.back-main,.other-main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+    
+}
+.front-main div,.back-main div,.other-main div{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(242, 243, 244, 0.5);
+    border: 1px solid rgb(177, 178, 179);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+}
+.skills img{
+    width: 24px;
+    height: 24px;
+}
+@media (max-width: 768px) {
+    .skills{
+        padding: 0px 24px;
+    }
+}

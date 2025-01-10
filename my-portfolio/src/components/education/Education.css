@@ -1,0 +1,11 @@
+.education{
+  margin-top: 100px;
+}
+.education .sectionHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+
