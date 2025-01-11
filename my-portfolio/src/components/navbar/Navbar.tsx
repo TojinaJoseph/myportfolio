@@ -8,6 +8,9 @@ function Navbar() {
   const toggleMenu = () => {
     setShowDiv(!showDiv);
   }
+  const closeMenu = () => {
+    setShowDiv(false);
+  };
   return (
     <div className='nav-main'>
       <div className='navbar-wrapper'>
@@ -21,11 +24,11 @@ function Navbar() {
         </ul>
         {showDiv && (
           <ul className='nav-list-mobile'>
-            <li><Link to="about">About</Link></li>
-            <li><Link to="skills">Skills</Link></li>
-            <li><Link to="experience">Experience</Link></li>
-            <li><Link to="projects">Projects</Link></li>
-            <li><Link to="education">Education</Link></li>
+            <li><Link to="about" onClick={closeMenu}>About</Link></li>
+            <li><Link to="skills" onClick={closeMenu}>Skills</Link></li>
+            <li><Link to="experience" onClick={closeMenu}>Experience</Link></li>
+            <li><Link to="projects" onClick={closeMenu}>Projects</Link></li>
+            <li><Link to="education" onClick={closeMenu}>Education</Link></li>
             <li> <div className='nav-btn'><a className='nav-git'>Github Profile</a></div></li>
           </ul>
         )}
