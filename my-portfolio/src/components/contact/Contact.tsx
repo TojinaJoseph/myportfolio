@@ -25,7 +25,7 @@ function Contact() {
             subject: data.subject,
             message: data.message
         }
-        axios.post('http://localhost:5000/api/sendmail', { formData })
+        axios.post('https://my-portfolio-backend-pnfn.onrender.com/api/sendmail', { formData })
             .then(({ data }) => {
 
                 alert(data.message);
