@@ -8,7 +8,6 @@ import Node from "../../assets/nodejs.svg";
 import express from "../../assets/express.png";
 import mongodb from "../../assets/mongodb.svg";
 import vs from "../../assets/vs.png";
-import git from "../../assets/git.png";
 import github from "../../assets/github.png";
 import azure from "../../assets/azure.jpg";
 import "./Skills.css"
