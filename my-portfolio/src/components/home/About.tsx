@@ -7,7 +7,7 @@ function About() {
   const handleDownload = () => {
     // Provide the path to the PDF file
     const link = document.createElement('a');
-    link.href = 'https://tojinajoseph.github.io/myportfolio/TojinaJoseph-Resume.pdf'; // Path to the PDF file (e.g., public folder)
+    link.href = 'https://tojinajoseph.github.io/myportfolio/public/TojinaJoseph-Resume.pdf'; // Path to the PDF file (e.g., public folder)
     link.download = 'Resume.pdf'; // Optional: Name for the downloaded file
     link.click();
   };
