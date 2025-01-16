@@ -8,7 +8,7 @@ function About() {
     const isProduction = import.meta.env.MODE === 'production';
 const fileUrl = isProduction 
   ? '/myportfolio/TojinaJoseph-Resume.pdf' 
-  : '/TojinaJoseph-Resume.pdf';
+  : 'TojinaJoseph-Resume.pdf';
     // Provide the path to the PDF file
     const link = document.createElement('a');
     link.href = fileUrl; // Path to the PDF file (e.g., public folder)
