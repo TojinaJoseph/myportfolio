@@ -5,9 +5,13 @@ import Typewritter from '../typewritter/Typewritter';
 
 function About() {
   const handleDownload = () => {
+    const isProduction = import.meta.env.MODE === 'production';
+const fileUrl = isProduction 
+  ? '/myportfolio/TojinaJoseph-Resume.pdf' 
+  : '/TojinaJoseph-Resume.pdf';
     // Provide the path to the PDF file
     const link = document.createElement('a');
-    link.href = 'TojinaJoseph-Resume.pdf'; // Path to the PDF file (e.g., public folder)
+    link.href = fileUrl; // Path to the PDF file (e.g., public folder)
     link.download = 'Resume.pdf'; // Optional: Name for the downloaded file
     link.click();
   };
