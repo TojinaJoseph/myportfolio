@@ -25,7 +25,7 @@ const fileUrl = isProduction
             <div className='about-subhead'>
               <h2>I am a </h2><Typewritter text={'Front End Developer'} />
             </div>
-            <p>I'm a highly motivated and versatile individual with a strong aptitude for problem-solving and a deep commitment to continuous development. I enjoy tackling complex challenges, analyzing data, and developing effective solutions. I'm a firm believer in lifelong learning and actively pursue opportunities to expand my knowledge and skillsets.</p>
+            <p>I'm a highly motivated and versatile individual with a strong aptitude for problem-solving and a deep commitment to continuous development. I enjoy tackling complex challenges, analyzing data, and developing effective solutions. I'm a firm believer in lifelong learning and actively pursue opportunities to expands my knowledge and skillsets.</p>
             <div className='download-btn'><a onClick={handleDownload}>Check Resume</a></div>
           </div>
           <div className="about-profile col-sm-12 col-lg-6 order-1 order-md-1 order-lg-2">
