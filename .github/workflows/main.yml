@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: '20.18.0' # Use the Node.js version compatible with your app
 
+      - name: Navigate to project directory
+        run: cd myportfolio  # Update to match the path to `package.json`
+
       - name: Install dependencies
         run: npm install
 
