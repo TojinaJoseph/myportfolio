@@ -11,7 +11,7 @@
       gap: 12px;
       align-items: center;
   }
-  .contact form{
+  .contactForm{
     width: 95%;
     max-width: 600px;
     display: flex;
@@ -30,7 +30,7 @@
     font-weight: 600;
     color: rgb(242, 243, 244);
   }
-  .contact input,.contact textarea{
+  .contactForm input,.contactForm textarea{
     width: 100%;
     background-color: transparent;
     border: 1px solid rgba(177, 178, 179, 0.314);
@@ -39,7 +39,7 @@
     border-radius: 12px;
     font-size: 18px;
   }
-  .contact button{
+  .contactForm button{
     width: 100%;
     text-decoration: none;
     text-align: center;

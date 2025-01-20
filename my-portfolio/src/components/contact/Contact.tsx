@@ -1,13 +1,32 @@
 import axios from 'axios'
 import './Contact.css'
 import { useForm, SubmitHandler } from "react-hook-form"
-type formProps = {
+import { Table } from '../table/Table'
+import { useEffect, useState } from 'react'
+export type formProps = {
     email: string,
     name: string,
     subject: string,
     message: string
 }
+export interface userItem{
+    _id:string
+    email: string,
+    name: string,
+    subject: string,
+    message: string
+}
+export interface users{
+    data:{
+        _id:string
+        email: string,
+        name: string,
+        subject: string,
+        message: string 
+    }[]
+}
 function Contact() {
+    const [user,setUser]=useState<userItem[]|null>(null);
     const {
         register,
         handleSubmit,
@@ -26,6 +45,7 @@ function Contact() {
             message: data.message
         }
         axios.post('https://my-portfolio-backend-pnfn.onrender.com/api/sendmail', { formData })
+        // axios.post('https://localhost:5000/api/sendmail', { formData })
             .then(({ data }) => {
 
                 alert(data.message);
@@ -35,6 +55,16 @@ function Contact() {
                 console.error('There was an error!', error);
             });
     }
+    useEffect(()=>{
+        axios.get('https://my-portfolio-backend-pnfn.onrender.com/api/getmail')
+        .then(({ data }) => {
+            console.log(data);
+           setUser(data);
+        })
+        .catch((error) => {
+            console.error('There was an error!', error);
+        });
+    },[])
     return (
         <div className='contact'>
             <div className='container'>
@@ -44,7 +74,7 @@ function Contact() {
                         <h3>Feel free to reach out to me for any questions or opportunities!</h3>
                     </div>
 
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)} className='contactForm'>
                         <div><h3>Email Me</h3></div>
                         <div><input placeholder='Your Email' {...register("email", {
                             required: "Email is required", pattern: {
@@ -62,8 +92,10 @@ function Contact() {
                         {errors.message && <p className='error'>{errors.message.message}</p>}
                         <div><button type='submit'><a href={`mailto:tojinajoseph123@gmail.com?subject=${subject}&body=${message}`}>Send</a></button></div>
                     </form>
-
+                   
                 </div>
+                {user && <Table data={user}/>}
+                
             </div>
         </div>
     )
