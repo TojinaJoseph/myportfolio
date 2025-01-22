@@ -23,15 +23,20 @@ jobs:
         with:
           node-version: '20.18.0' # Use the Node.js version compatible with your app
 
+      - name: Navigating to frontend
+        run: cd my-portfolio
+
       - name: Install dependencies
-        run: npm install
+        run: cd my-portfolio
+             npm install
 
       - name: Build the app
-        run: npm run build
+        run: cd my-portfolio
+             npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: my-portfolio/dist
           publish_branch: gh-pages

@@ -1,8 +1,6 @@
-import axios from 'axios'
 import './Contact.css'
 import { useForm, SubmitHandler } from "react-hook-form"
-import { Table } from '../table/Table'
-import { useEffect, useState } from 'react'
+
 export type formProps = {
     email: string,
     name: string,
@@ -26,7 +24,7 @@ export interface users{
     }[]
 }
 function Contact() {
-    const [user,setUser]=useState<userItem[]|null>(null);
+    // const [user,setUser]=useState<userItem[]|null>(null);
     const {
         register,
         handleSubmit,
@@ -44,27 +42,9 @@ function Contact() {
             subject: data.subject,
             message: data.message
         }
-        axios.post('https://my-portfolio-backend-pnfn.onrender.com/api/sendmail', { formData })
-        // axios.post('https://localhost:5000/api/sendmail', { formData })
-            .then(({ data }) => {
-
-                alert(data.message);
-                reset()
-            })
-            .catch((error) => {
-                console.error('There was an error!', error);
-            });
+        console.log(formData);
+        reset();
     }
-    useEffect(()=>{
-        axios.get('https://my-portfolio-backend-pnfn.onrender.com/api/getmail')
-        .then(({ data }) => {
-            console.log(data);
-           setUser(data);
-        })
-        .catch((error) => {
-            console.error('There was an error!', error);
-        });
-    },[])
     return (
         <div className='contact'>
             <div className='container'>
@@ -91,11 +71,8 @@ function Contact() {
                         <div><textarea placeholder='Message'  {...register("message", { required: "Message is required" })} /></div>
                         {errors.message && <p className='error'>{errors.message.message}</p>}
                         <div><button type='submit'><a href={`mailto:tojinajoseph123@gmail.com?subject=${subject}&body=${message}`}>Send</a></button></div>
-                    </form>
-                   
-                </div>
-                {user && <Table data={user}/>}
-                
+                    </form>                   
+                </div>                
             </div>
         </div>
     )
