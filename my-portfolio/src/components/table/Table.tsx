@@ -3,15 +3,6 @@ import { formProps, userItem, users } from "../contact/Contact";
 import "./Table.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-// interface TableProps{
-//     data:{
-//       id:string  
-//       name:string 
-//       email:string
-//       subject:string
-//       message:string
-//     }[]
-// }
 
 export const Table: React.FC<users>  = ({data}) => {
   const [newData,setNewData]=useState<userItem[]|null>(null)
@@ -19,15 +10,12 @@ export const Table: React.FC<users>  = ({data}) => {
     const {
             register,
             handleSubmit,
-            reset,
-            watch,
-            formState: { errors },
+            reset
         } = useForm<formProps>()
         const onSubmit=(data: formProps)=>{
         console.log(data)
           axios.put(`https://my-portfolio-backend-pnfn.onrender.com/api/items/${editIndex}`, data)
           .then((response) => {
-            // console.log("updata",ndata);
             setNewData((prevData) => {
               if (prevData) {
                 return prevData.map((row) =>
@@ -36,14 +24,7 @@ export const Table: React.FC<users>  = ({data}) => {
               }
               return []; // Return an empty array if prevData is null or undefined
             });
-              
-           
-          
             setEditIndex(null);
-              // alert('Item updated successfully!');
-              // setNewData(newData.map((row) => 
-              //   row.id === editIndex ? { ...data } : row
-              // ));
           })
           .catch(err => console.error(err));
         
@@ -62,7 +43,7 @@ export const Table: React.FC<users>  = ({data}) => {
 
   const handleDelete = (id: string) => {
     axios.delete(`https://my-portfolio-backend-pnfn.onrender.com/api/delete/${id}`)
-      .then((response) => {
+      .then(() => {
         setNewData((prevData) => {
           if (prevData) {
             return prevData.filter((row) => row._id !== id);

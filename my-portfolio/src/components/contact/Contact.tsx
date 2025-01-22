@@ -29,12 +29,9 @@ function Contact() {
         register,
         handleSubmit,
         reset,
-        watch,
         formState: { errors },
     } = useForm<formProps>()
 
-
-    const { subject, message } = watch();
     const onSubmit: SubmitHandler<formProps> = (data) => {
         const formData = {
             email: data.email,
@@ -70,7 +67,7 @@ function Contact() {
                         {errors.subject && <p className='error'>{errors.subject.message}</p>}
                         <div><textarea placeholder='Message'  {...register("message", { required: "Message is required" })} /></div>
                         {errors.message && <p className='error'>{errors.message.message}</p>}
-                        <div><button type='submit'><a href={`mailto:tojinajoseph123@gmail.com?subject=${subject}&body=${message}`}>Send</a></button></div>
+                        <div><button type='submit'>Send</button></div>
                     </form>                   
                 </div>                
             </div>
