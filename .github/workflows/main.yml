@@ -27,11 +27,13 @@ jobs:
         run: cd my-portfolio
 
       - name: Install dependencies
-        run: cd my-portfolio
+        run: |
+             cd my-portfolio
              npm install
 
       - name: Build the app
-        run: cd my-portfolio
+        run: |
+             cd my-portfolio
              npm run build
 
       - name: Deploy to GitHub Pages
